@@ -9,8 +9,12 @@ import {
 import Brand from "@components/Brand";
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
+import { useNavigation } from "@react-navigation/native";
+import { AuthNavigatorRoutesProps } from "@routes/auth.routes";
 
 export function SignIn() {
+  const navigation = useNavigation<AuthNavigatorRoutesProps>();
+
   return (
     <Container>
       <Brand />
@@ -21,7 +25,7 @@ export function SignIn() {
       <Description>Or continue with</Description>
       <ContainerCreateAccount>
         <Description>Don’t have account? </Description>
-        <CreateAcconunt>
+        <CreateAcconunt onPress={() => navigation.navigate("signUp")}>
           <Description bold={true}>Create now</Description>
         </CreateAcconunt>
       </ContainerCreateAccount>

@@ -9,7 +9,6 @@ import {
 import Brand from "@components/Brand";
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
-import Spacer from "@components/Spacer";
 
 export function SignUp() {
   return (
