@@ -3,6 +3,7 @@ export default {
     WHITE: "#FFFFFF",
     BLACK: "#000",
     GREEN: "#3EB489",
+    GRAY: "#64748B",
   },
   FONT_FAMILY: {
     REGULAR: "Poppins_400Regular",
