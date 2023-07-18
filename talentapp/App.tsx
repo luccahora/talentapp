@@ -1,4 +1,3 @@
-import { SignIn } from "@screens/SignIn";
 import theme from "@theme/index";
 import { ThemeProvider } from "styled-components/native";
 import {
@@ -8,7 +7,6 @@ import {
 } from "@expo-google-fonts/poppins";
 import { Loading } from "@components/Loading";
 import React from "react";
-import { SignUp } from "@screens/SignUp";
 import { Routes } from "@routes/index";
 
 export default function App() {
