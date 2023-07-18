@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, ScrollView } from "react-native";
 import {
   ChangePhoto,
@@ -12,13 +12,34 @@ import {
 import CameraSvg from "@assets/camera.svg";
 import PenSvg from "@assets/pen.svg";
 import Card from "@components/Card";
+import * as ImagePicker from "expo-image-picker";
 
 export function Profile() {
+  const [userPhoto, setUserPhoto] = useState(
+    require("@assets/imageBackground.png")
+  );
+
+  const openImagePicker = async () => {
+    const permissionResult =
+      await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (permissionResult.granted === false) {
+      alert("Permission to access camera roll is required!");
+      return;
+    }
+
+    const pickerResult = await ImagePicker.launchImageLibraryAsync();
+    if (pickerResult.canceled === true) {
+      return;
+    }
+
+    setUserPhoto(pickerResult.assets);
+  };
+
   return (
     <Container>
-      <UserPhoto source={require("@assets/imageBackground.png")} />
+      <UserPhoto source={userPhoto} />
       <UserData>
-        <ChangePhoto>
+        <ChangePhoto onPress={openImagePicker}>
           <CameraSvg />
         </ChangePhoto>
 
