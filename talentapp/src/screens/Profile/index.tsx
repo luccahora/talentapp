@@ -13,8 +13,11 @@ import CameraSvg from "@assets/camera.svg";
 import PenSvg from "@assets/pen.svg";
 import Card from "@components/Card";
 import * as ImagePicker from "expo-image-picker";
+import { useAuth } from "../../hooks/useAuth";
 
 export function Profile() {
+  const { user } = useAuth();
+
   const [userPhoto, setUserPhoto] = useState(
     require("@assets/imageBackground.png")
   );
@@ -45,8 +48,8 @@ export function Profile() {
 
         <InfoUser>
           <View>
-            <Title>Maria Isadora</Title>
-            <Description>mariaissa@gmail.com</Description>
+            <Title>{user.name}</Title>
+            <Description>{user.email}</Description>
           </View>
           <PenSvg />
         </InfoUser>
