@@ -22,7 +22,7 @@ export function SignUp() {
   }
 
   const handleRegister = () => {
-    createUser(email, password, surname, confirmPassword);
+    createUser(name, email, surname, password);
     Alert.alert("User registered");
     handleBack();
   };
