@@ -5,6 +5,7 @@ export const UserSchema = {
     name: "string",
     email: "string",
     passowrd: "string",
+    confirmPassword: "string",
   },
   primaryKey: "_id",
 };
