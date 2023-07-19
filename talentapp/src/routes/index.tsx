@@ -5,8 +5,8 @@ import { AppRoutes } from "./app.routes";
 export function Routes() {
   return (
     <NavigationContainer>
-      {/*   <AuthRoutes /> */}
-      <AppRoutes />
+      <AuthRoutes />
+      {/* <AppRoutes /> */}
     </NavigationContainer>
   );
 }
