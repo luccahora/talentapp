@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Title } from "./styles";
+import { Container, Cover, Title } from "./styles";
 import Brand from "@components/Brand";
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
@@ -30,25 +30,28 @@ export function SignUp() {
   };
 
   return (
-    <Container>
-      <Brand />
-      <Title>Sign Up</Title>
-      <Input label={"Name"} onChangeText={setName} />
-      <Input label={"Surname"} onChangeText={setSurname} />
-      <Input label={"Email"} onChangeText={setEmail} autoCapitalize="words" />
-      <Input
-        label={"Password"}
-        secureTextEntry={true}
-        onChangeText={setPassword}
-        textContentType="emailAddress"
-      />
-      <Input
-        label={"Password"}
-        secureTextEntry={true}
-        onChangeText={setConfirmPassword}
-      />
+    <>
+      <Cover source={require("@assets/Subtract.png")} />
+      <Container>
+        <Brand />
+        <Title>Sign Up</Title>
+        <Input label={"Name"} onChangeText={setName} />
+        <Input label={"Surname"} onChangeText={setSurname} />
+        <Input label={"Email"} onChangeText={setEmail} autoCapitalize="words" />
+        <Input
+          label={"Password"}
+          secureTextEntry={true}
+          onChangeText={setPassword}
+          textContentType="emailAddress"
+        />
+        <Input
+          label={"Password"}
+          secureTextEntry={true}
+          onChangeText={setConfirmPassword}
+        />
 
-      <Button title={"Register"} onPress={handleRegister} />
-    </Container>
+        <Button title={"Register"} onPress={handleRegister} />
+      </Container>
+    </>
   );
 }

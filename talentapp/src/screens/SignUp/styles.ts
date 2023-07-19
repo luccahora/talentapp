@@ -4,9 +4,14 @@ interface DescriptionProps {
   bold?: boolean;
 }
 
+export const Cover = styled.Image`
+  width: 100%;
+`;
+
 export const Container = styled.SafeAreaView`
   align-items: center;
   flex-direction: column;
+  margin-top: -70%;
 `;
 
 export const Title = styled.Text`
