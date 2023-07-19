@@ -23,6 +23,7 @@ import MegaphoneSvg from "@assets/megaphone.svg";
 import BagSvg from "@assets/bag.svg";
 import CoinSvg from "@assets/coin.svg";
 import { ScrollView } from "react-native";
+import { useAuth } from "../../hooks/useAuth";
 
 interface CategoryOptionProps {
   icon: any;
@@ -42,6 +43,7 @@ function CategoryOption({
 }
 
 export function Home() {
+  const { user } = useAuth();
   return (
     <Container>
       <Header>
@@ -53,7 +55,7 @@ export function Home() {
       </Header>
       <ScrollView>
         <SearchContainer>
-          <Title>Hello, Maria 👋🏻</Title>
+          <Title>Hello, {user.name} 👋🏻</Title>
           <Description>What do you wanna donate today?</Description>
           <InputFilter />
           <Banner

@@ -1,16 +1,14 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { AuthRoutes } from "./auth.routes";
 import { AppRoutes } from "./app.routes";
-import { useContext } from "react";
-import { AuthContext } from "@contexts/AuthContext";
+import { useAuth } from "@hooks/useAuth";
 
 export function Routes() {
-  const contextData = useContext(AuthContext);
-  console.log("user", contextData);
+  const { user } = useAuth();
+
   return (
     <NavigationContainer>
-      <AuthRoutes />
-      {/* <AppRoutes /> */}
+      {user.name ? <AppRoutes /> : <AuthRoutes />}
     </NavigationContainer>
   );
 }
