@@ -16,5 +16,5 @@
 ## Executar o app
 
 ### `yarn`
-### `expo run:ios`
+### `expo run:ios ou expo run:android`
 
